@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva de Horas Médicas | Centro de Salud</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <p class="badge">Portal de Atención al Paciente</p>
+      <h1>Reserva de Horas Médicas</h1>
+      <p class="subtitle">Consulta de horarios, estado del servicio y solicitud de atención ambulatoria.</p>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="card">
+      <h2>Datos Generales de Atención</h2>
+      <ul class="info-list">
+        <li><strong>Horario de atención:</strong> Lunes a viernes de 08:00 a 19:00 hrs.</li>
+        <li><strong>Especialidades disponibles:</strong> Medicina General, Pediatría, Ginecología, Kinesiología.</li>
+        <li><strong>Modalidad:</strong> Presencial en sucursal (entorno de demostración estática).</li>
+        <li><strong>Aviso de privacidad:</strong> No ingrese datos personales o clínicos reales en este formulario.</li>
+      </ul>
+      <div class="status-box" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <strong>Estado del servicio: Operativo (Contenedor Nginx Local)</strong>
+          <p>Servidor web estático activo en puerto 8080 para pruebas locales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Formulario de Reserva de Hora</h2>
+      <form id="reserva-form" class="form" onsubmit="event.preventDefault(); document.getElementById('mensaje-confirmacion').hidden = false;">
+        <div class="field">
+          <label for="nombre">Nombre de referencia (ejemplo)</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ej. Paciente Demo" required />
+        </div>
+
+        <div class="field">
+          <label for="correo">Correo de contacto (ejemplo)</label>
+          <input id="correo" name="correo" type="email" placeholder="ejemplo@correo-demo.cl" required />
+        </div>
+
+        <div class="field">
+          <label for="especialidad">Especialidad médica</label>
+          <select id="especialidad" name="especialidad" required>
+            <option value="">Seleccione una especialidad</option>
+            <option value="medicina-general">Medicina General</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="ginecologia">Ginecología</option>
+            <option value="kinesiologia">Kinesiología</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fecha">Fecha preferida</label>
+          <input id="fecha" name="fecha" type="date" required />
+        </div>
+
+        <div class="field">
+          <label for="jornada">Jornada</label>
+          <select id="jornada" name="jornada" required>
+            <option value="manana">Mañana (08:00 - 12:30)</option>
+            <option value="tarde">Tarde (14:00 - 19:00)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Simular solicitud de hora</button>
+
+        <p id="mensaje-confirmacion" class="confirmation" hidden>
+          Solicitud simulada registrada en vista local (sin envío a base de datos ni servidor externo).
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Proyecto Integrador DevOps — Servicio Web Estático de Reserva de Horas Médicas.</p>
+    </div>
+  </footer>
+</body>
+</html>

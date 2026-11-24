@@ -1,0 +1,10 @@
+# Archivos de entorno locales (nunca subir secretos reales)
+.env
+*.local
+
+# Archivos temporales y del sistema
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak

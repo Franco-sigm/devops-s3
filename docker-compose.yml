@@ -1,0 +1,11 @@
+services:
+  web-reservas:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reservas-horas-nginx
+    ports:
+      - "8080:80"
+    env_file:
+      - .env.example
+    restart: unless-stopped
